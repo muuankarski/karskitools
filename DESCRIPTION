@@ -1,0 +1,17 @@
+Package: karskitools
+Type: Package
+Title: karskitools: Collection of functions to facilitate reproducible analysis with R, knitr and pandoc
+Version: 0.0.1
+Date: 2013-08-13
+Author: Markus Kainu
+Maintainer: Markus Kainu <markuskainu@gmail.com>
+VignetteBuilder: knitr
+Depends: R (>= 2.15.0)
+URL: http://markuskainu.fi/karskitools
+Suggests: knitr
+Description: Collection of functions to facilitate reproducible analysis with R, knitr and pandoc
+LazyData: TRUE
+License: MIT
+Collate:
+    'knitpandoc.R'
+    'karskitools.R'
