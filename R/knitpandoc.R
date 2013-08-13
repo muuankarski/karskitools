@@ -58,3 +58,30 @@ knitpandoc <- function(filename,ending="empty") {
   system(pandoccommand_html)
   
 }
+
+
+#' Convert R Markdown file into .docx format
+#'
+#' @param filename R Markdown file without filename extension .Rmd
+#'
+#' @return A .docx-format document
+#' 
+#' @export
+#' @examples # see http://markuskainu.fi/karskitools
+#' @author Markus Kainu <markuskainu(at)gmail.com> 
+
+knitpandoc_docx <- function(filename,ending="empty") {
+  library(knitr)
+  library(markdown)
+  
+  fileRmd <- paste(filename,".Rmd", sep="")
+  knitr::knit2html(fileRmd)
+  
+  filemd <- paste(filename,".md", sep="")
+  filedocx <- paste(filename,".docx", sep="")
+  
+  pandoccommand_docx <- paste("pandoc ",filemd," -o ",filedocx,sep="")
+  
+  system(pandoccommand_docx)
+  
+}
